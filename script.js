@@ -4,8 +4,10 @@ const selectToCurrency = document.getElementById("selectToCurrency")
 const showResult = document.getElementById("showResult")
 
 async function getAllCurrencyNames(){
-    let rates = await fetch('http://data.fixer.io/api/latest?access_key=88a5e040fd4f62eeb2f06ce7dbd02428&format=1')
+    let rates = await fetch('http://data.fixer.io/api/latest?access_key=88a5e040fd4f62eeb2f06ce7dbd02428')
+    
     let data = await rates.json()
+   
     let arr = []
     for( const key in data['rates']){
         arr.push(key)
@@ -44,7 +46,7 @@ generateSelect()
 
 
 async function apply(){
-    let rates = await fetch('http://data.fixer.io/api/latest?access_key=88a5e040fd4f62eeb2f06ce7dbd02428&format=1')
+    let rates = await fetch('http://data.fixer.io/api/latest?access_key=88a5e040fd4f62eeb2f06ce7dbd02428')
     let data = await rates.json()
  
     let toCurrency = selectToCurrency.value
